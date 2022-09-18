@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "273013594178",
+    "firebase_url": "https://my-emp-6b730-default-rtdb.firebaseio.com",
+    "project_id": "my-emp-6b730",
+    "storage_bucket": "my-emp-6b730.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273013594178:android:c5f6478669044190a535db",
+        "android_client_info": {
+          "package_name": "com.example.myemp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273013594178-kird0ptheut71r6spejlfoc01lmvtvtn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwmpRkkvkHkFQh-7Bl3nb60Xw9anlF2IY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273013594178-kird0ptheut71r6spejlfoc01lmvtvtn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273013594178:android:822f91718ea03ec6a535db",
+        "android_client_info": {
+          "package_name": "com.glowingsoft.carplaterecognizer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273013594178-kird0ptheut71r6spejlfoc01lmvtvtn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwmpRkkvkHkFQh-7Bl3nb60Xw9anlF2IY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273013594178-kird0ptheut71r6spejlfoc01lmvtvtn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
