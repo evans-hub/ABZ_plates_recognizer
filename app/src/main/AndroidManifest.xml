@@ -17,15 +17,23 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:name=".ui.DashBoard"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ui.EditActivity"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".ui.MainActivity"/>
+            android:parentActivityName=".ui.MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.SettingActivity"
             android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.MainActivity"
-            android:screenOrientation="portrait" >
+        <activity
+            android:name=".ui.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,6 +51,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/picker_provider_paths" />
         </provider>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
