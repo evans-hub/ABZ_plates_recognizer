@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:iconTint="@color/white"
+        android:title="DashBoard"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_admin"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_rss_feed_24"
+        android:iconTint="@color/white"
+        android:title="Admin"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_settings"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings_white_24dp"
+        android:iconTint="@color/white"
+        android:title="Settings"
+        app:iconTint="@color/white"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_notification"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_notifications_24"
+        android:title="Notification"
+        app:showAsAction="ifRoom" />
+</menu>
