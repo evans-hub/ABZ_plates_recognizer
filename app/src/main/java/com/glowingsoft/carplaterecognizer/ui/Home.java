@@ -28,7 +28,7 @@ import java.util.ArrayList;
 public class Home extends AppCompatActivity {
 
     Adapter adapter;
-    ImageView imageView;
+    ImageView imageView,see;
     ArrayList<Model> list;
     ProgressDialog loading;
     private RecyclerView recyclerView;
@@ -47,6 +47,7 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         loading = new ProgressDialog(this);
+        see=findViewById(R.id.sea);
         recyclerView = (RecyclerView) findViewById(R.id.lv);
         final BottomNavigationView navigationView = (BottomNavigationView) findViewById(R.id.navigation);
         reference = FirebaseDatabase.getInstance().getReference("allcars");
@@ -58,6 +59,13 @@ public class Home extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.profile_image_home);
       adapter = new Adapter(this,list);
         recyclerView.setAdapter(adapter);
+        see.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Home.this,Search.class);
+                startActivity(intent);
+            }
+        });
        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 if (newState == 0) {

@@ -72,12 +72,15 @@ EditText am;
         this.builds.setMessage("Payment").setTitle("Payment confirmation");
         this.builds.setMessage("Do you want to continue with payment ?").setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id2) {
-
+                SimpleDateFormat formatter=new SimpleDateFormat("dd-MM-yyyy");
+                Date date =new Date();
+                String dd= formatter.format(date);
                 DatabaseReference refer = FirebaseDatabase.getInstance().getReference("staff");
                 refer.child(plates).child("amount").setValue(String.valueOf(0));
                 refer.child(plates).child("payment").setValue("paid");
                 refer.child(plates).child("state").setValue("enabled");
                 refer.child(plates).child("times").setValue(0);
+                refer.child(plates).child("pay_dates").child(dd).setValue(amounts);
                 button.setText("paid");
                 total.setText("0.0");
                 AlertDialog alert = Paying.this.build.create();
@@ -97,6 +100,9 @@ EditText am;
                 int aa=Integer.parseInt(amounts);
                 int bb=Integer.parseInt(miless)*100;
                 long cc=aa/bb;
+                if (aa <= 100){
+                    Toast.makeText(Paying.this, "Insufficient amount,You must have more than 100", Toast.LENGTH_LONG).show();
+                }
                 if (cc<4 && limit.equalsIgnoreCase("disabled")){
                     Toast.makeText(Paying.this, "You must have checked in 4 times to be paid", Toast.LENGTH_SHORT).show();
                 }

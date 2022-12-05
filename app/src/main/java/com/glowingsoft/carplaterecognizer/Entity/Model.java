@@ -11,60 +11,60 @@ public class Model {
     public Model() {
     }
 
-    public Model(String car_plate2, String name2, String car_model2, String time_in2, String type2, String millis2) {
-        this.car_plate = car_plate2;
-        this.name = name2;
-        this.car_model = car_model2;
-        this.time_in = time_in2;
-        this.type = type2;
-        this.millis = millis2;
-    }
-
-    public String getCar_plate() {
-        return this.car_plate;
-    }
-
-    public void setCar_plate(String car_plate2) {
-        this.car_plate = car_plate2;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name2) {
-        this.name = name2;
+    public Model(String name, String car_plate,String car_model, String time_in,String type,String millis) {
+        this.car_model = car_model;
+        this.car_plate = car_plate;
+        this.millis = millis;
+        this.name = name;
+        this.time_in = time_in;
+        this.type = type;
     }
 
     public String getCar_model() {
-        return this.car_model;
+        return car_model;
     }
 
-    public void setCar_model(String car_model2) {
-        this.car_model = car_model2;
+    public void setCar_model(String car_model) {
+        this.car_model = car_model;
     }
 
-    public String getTime_in() {
-        return this.time_in;
+    public String getCar_plate() {
+        return car_plate;
     }
 
-    public void setTime_in(String time_in2) {
-        this.time_in = time_in2;
-    }
-
-    public String getType() {
-        return this.type;
-    }
-
-    public void setType(String type2) {
-        this.type = type2;
+    public void setCar_plate(String car_plate) {
+        this.car_plate = car_plate;
     }
 
     public String getMillis() {
-        return this.millis;
+        return millis;
     }
 
-    public void setMillis(String millis2) {
-        this.millis = millis2;
+    public void setMillis(String millis) {
+        this.millis = millis;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getTime_in() {
+        return time_in;
+    }
+
+    public void setTime_in(String time_in) {
+        this.time_in = time_in;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

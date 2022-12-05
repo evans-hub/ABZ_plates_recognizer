@@ -482,8 +482,10 @@ public class MainActivity extends AppCompatActivity  implements IPickResult,View
             PickImageDialog.build(this.setup).show((FragmentActivity) this);
         }
         if (v.getId() == R.id.check_in_image) {
-
-            String dd = new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime());
+            SimpleDateFormat formatter=new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+             Date date =new Date();
+            String dd= formatter.format(date);
+          //  String dd = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().ge());
             String millis = String.valueOf(System.currentTimeMillis());
             this.load.setTitle("Sign in");
             this.load.setMessage("Checking in please wait..");
