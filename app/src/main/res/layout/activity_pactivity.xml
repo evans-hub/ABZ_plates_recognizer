@@ -22,7 +22,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/sea"
+            android:id="@+id/seay"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
@@ -31,7 +31,7 @@
             android:layout_marginRight="20dp"
             android:backgroundTint="@color/white"
             android:drawableRight="@drawable/ic_baseline_search_24"
-            android:hint="Search By Date/Plate"
+            android:hint="Search By Date/name"
             android:textColor="@color/white"
             android:textColorHint="@color/white" />
 
@@ -41,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="Pick Date"
+            android:visibility="invisible"
             android:textAllCaps="false" />
     </LinearLayout>
 </RelativeLayout>

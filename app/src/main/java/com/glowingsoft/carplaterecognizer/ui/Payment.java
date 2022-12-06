@@ -30,7 +30,7 @@ import java.util.ArrayList;
 public class Payment extends AppCompatActivity {
 RecyclerView recyclerView;
     PaymentAdapter adapter;
-    ImageView imageView;
+    ImageView imageView,see;
     ArrayList<Pay> list;
     ProgressDialog loading;
     DatabaseReference reference;
@@ -48,6 +48,7 @@ RecyclerView recyclerView;
         setContentView(R.layout.activity_payment);
         recyclerView=findViewById(R.id.paymentrecyclerview);
         loading = new ProgressDialog(this);
+        see=findViewById(R.id.seaa);
         final BottomNavigationView navigationView = (BottomNavigationView) findViewById(R.id.navigation);
         reference = FirebaseDatabase.getInstance().getReference("staff");
         recyclerView.setHasFixedSize(true);
@@ -56,6 +57,13 @@ RecyclerView recyclerView;
         adapter = new PaymentAdapter(this,list);
         recyclerView.setAdapter(adapter);
         tt = (TextView) findViewById(R.id.home_number);
+        see.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Payment.this,PActivity.class);
+                startActivity(intent);
+            }
+        });
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 if (newState == 0) {

@@ -1,5 +1,6 @@
 package com.glowingsoft.carplaterecognizer.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -14,7 +15,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.glowingsoft.carplaterecognizer.Entity.Pay;
+import com.glowingsoft.carplaterecognizer.Entity.staff;
 import com.glowingsoft.carplaterecognizer.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -76,11 +81,17 @@ EditText am;
                 Date date =new Date();
                 String dd= formatter.format(date);
                 DatabaseReference refer = FirebaseDatabase.getInstance().getReference("staff");
+                DatabaseReference referer = FirebaseDatabase.getInstance().getReference("payment").child(plates);
                 refer.child(plates).child("amount").setValue(String.valueOf(0));
                 refer.child(plates).child("payment").setValue("paid");
                 refer.child(plates).child("state").setValue("enabled");
                 refer.child(plates).child("times").setValue(0);
-                refer.child(plates).child("pay_dates").child(dd).setValue(amounts);
+                String pp="paid";
+                String rr="enabled";
+//
+                Pay staffModel = new Pay(models,plates,dd, pp,amounts,names,miless,rr);
+
+                referer.child(dd).setValue(staffModel);
                 button.setText("paid");
                 total.setText("0.0");
                 AlertDialog alert = Paying.this.build.create();
@@ -103,16 +114,19 @@ EditText am;
                 if (aa <= 100){
                     Toast.makeText(Paying.this, "Insufficient amount,You must have more than 100", Toast.LENGTH_LONG).show();
                 }
-                if (cc<4 && limit.equalsIgnoreCase("disabled")){
-                    Toast.makeText(Paying.this, "You must have checked in 4 times to be paid", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    AlertDialog alert = Paying.this.builds.create();
-                    alert.setTitle("Payment confirmation");
-                    alert.show();
+                else{
+                    if (cc<4 && limit.equalsIgnoreCase("disabled")){
+                        Toast.makeText(Paying.this, "You must have checked in 4 times to be paid", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        AlertDialog alert = Paying.this.builds.create();
+                        alert.setTitle("Payment confirmation");
+                        alert.show();
 
 
+                    }
                 }
+
 
 
             }
